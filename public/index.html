@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Assistant Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Home Assistant Dashboard</h1>
+      <div class="connection-status" id="connection-status">
+        <span class="status-dot"></span>
+        <span class="status-text">Connecting...</span>
+      </div>
+    </header>
+
+    <div id="error-banner" class="error-banner hidden">
+      <span class="error-message"></span>
+      <button class="error-close" onclick="hideError()">&times;</button>
+    </div>
+
+    <main>
+      <section class="device-section">
+        <h2>Lights</h2>
+        <div class="device-grid" id="lights-grid">
+          <div class="loading">Loading lights...</div>
+        </div>
+      </section>
+
+      <section class="device-section">
+        <h2>Switches</h2>
+        <div class="device-grid" id="switches-grid">
+          <div class="loading">Loading switches...</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Demo Dashboard for Home Assistant</p>
+      <button class="refresh-btn" onclick="refreshDevices()">Refresh</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
