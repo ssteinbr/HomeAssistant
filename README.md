@@ -1,8 +1,45 @@
-# Home Assistant Demo Dashboard
+# Home Assistant Dashboard Collection
 
-A modern, responsive web dashboard for controlling Home Assistant lights and switches.
+A collection of modern dashboards for Home Assistant, including native Lovelace dashboards and a standalone web dashboard.
 
-## Features
+## Native Lovelace Dashboards
+
+Custom dashboard configurations for your Home Assistant instance with a modern UI.
+
+### Available Dashboards
+
+| Dashboard | Description | File |
+|-----------|-------------|------|
+| **Lights** | Control all lights with scenes, brightness, and grouping | `dashboards/lights.yaml` |
+| **Sonos** | Full Sonos control with grouping, favorites, and now playing | `dashboards/sonos.yaml` |
+| **Apple TV** | Remote control, app launcher, and multi-device management | `dashboards/appletv.yaml` |
+
+### Features
+
+- **Modern UI** using Mushroom Cards
+- **Organized by room** for easy navigation
+- **Quick actions** and scene controls
+- **Media controls** with album art
+- **Speaker grouping** for whole-house audio
+- **Virtual remote** for Apple TV
+
+### Installation
+
+See [dashboards/INSTALL.md](dashboards/INSTALL.md) for detailed installation instructions.
+
+**Quick Start:**
+1. Install HACS custom cards (Mushroom, Mini Media Player)
+2. Create a new dashboard in Home Assistant
+3. Copy/paste the YAML from the dashboard files
+4. Update entity IDs to match your devices
+
+---
+
+## Standalone Web Dashboard
+
+A separate Node.js web dashboard for controlling Home Assistant lights and switches.
+
+### Web Dashboard Features
 
 - View all lights and switches from your Home Assistant instance
 - Toggle devices on/off with a single click
