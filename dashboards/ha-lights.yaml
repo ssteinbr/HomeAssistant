@@ -1,0 +1,621 @@
+# Home Assistant dashboard: Lights  (url_path: ha-lights)
+# Storage-mode dashboard written via hass-mcp on 2026-09-18.
+# To re-apply: Settings > Dashboards > Lights > ⋮ > Raw configuration editor, paste this file.
+{
+  "title": "Lights",
+  "views": [
+    {
+      "type": "sections",
+      "title": "Lights",
+      "path": "lights",
+      "icon": "mdi:lightbulb-group",
+      "max_columns": 4,
+      "badges": [
+        {
+          "type": "entity",
+          "entity": "sun.sun",
+          "name": "Sun",
+          "show_name": false
+        },
+        {
+          "type": "entity",
+          "entity": "light.living_room",
+          "name": "Living Room",
+          "show_name": true,
+          "color": "amber",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "light.living_room",
+              "state": "on"
+            }
+          ]
+        },
+        {
+          "type": "entity",
+          "entity": "light.scott_office",
+          "name": "Scott's Office",
+          "show_name": true,
+          "color": "amber",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "light.scott_office",
+              "state": "on"
+            }
+          ]
+        },
+        {
+          "type": "entity",
+          "entity": "light.basement",
+          "name": "Andrea HQ",
+          "show_name": true,
+          "color": "amber",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "light.basement",
+              "state": "on"
+            }
+          ]
+        },
+        {
+          "type": "entity",
+          "entity": "light.porch",
+          "name": "Porch",
+          "show_name": true,
+          "color": "amber",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "light.porch",
+              "state": "on"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Quick Actions",
+              "heading_style": "title",
+              "icon": "mdi:flash"
+            },
+            {
+              "type": "button",
+              "name": "Everything Off",
+              "icon": "mdi:power-off",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "homeassistant.turn_off",
+                "target": {
+                  "entity_id": [
+                    "light.living_room",
+                    "light.scott_office",
+                    "light.basement",
+                    "light.porch",
+                    "light.other_other",
+                    "light.tiffany_lamp_socket_1",
+                    "switch.dresser_lamp_socket_1",
+                    "switch.front_window_lights_socket",
+                    "switch.basement_shelf_lamp_socket_1",
+                    "switch.christmas_village_socket",
+                    "switch.tp_link_smart_plug_c1c5_tree_lights",
+                    "switch.tp_link_smart_plug_c1c5_plug_2",
+                    "switch.back_porch_lights",
+                    "switch.back_yard_plug_back_yard_lights"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Inside On",
+              "icon": "mdi:home-lightbulb",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "light.turn_on",
+                "target": {
+                  "entity_id": [
+                    "light.living_room",
+                    "light.scott_office",
+                    "light.basement"
+                  ]
+                },
+                "data": {
+                  "brightness_pct": 80
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Outside On",
+              "icon": "mdi:outdoor-lamp",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "homeassistant.turn_on",
+                "target": {
+                  "entity_id": [
+                    "light.porch",
+                    "switch.back_yard_plug_back_yard_lights"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Night Mode",
+              "icon": "mdi:weather-night",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "light.turn_on",
+                "target": {
+                  "entity_id": [
+                    "light.living_room",
+                    "light.scott_office"
+                  ]
+                },
+                "data": {
+                  "brightness_pct": 15,
+                  "color_temp_kelvin": 2200
+                }
+              }
+            }
+          ],
+          "column_span": 4
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Living Room",
+              "heading_style": "title",
+              "icon": "mdi:sofa"
+            },
+            {
+              "type": "tile",
+              "entity": "light.living_room",
+              "name": "Living Room (all)",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.couch_lamp",
+              "name": "Couch Lamp",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.end_table_lamp",
+              "name": "End Table Lamp",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.reading_lamp",
+              "name": "Reading Lamp",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Scott's Office",
+              "heading_style": "title",
+              "icon": "mdi:desk-lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "light.scott_office",
+              "name": "Office Light",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "button",
+              "name": "Concentrate",
+              "icon": "mdi:head-lightbulb",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "scene.turn_on",
+                "target": {
+                  "entity_id": "scene.kitchen_concentrate"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Read",
+              "icon": "mdi:book-open-variant",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "scene.turn_on",
+                "target": {
+                  "entity_id": "scene.kitchen_read"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Relax",
+              "icon": "mdi:sofa-outline",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "scene.turn_on",
+                "target": {
+                  "entity_id": "scene.kitchen_relax"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Energize",
+              "icon": "mdi:white-balance-sunny",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "scene.turn_on",
+                "target": {
+                  "entity_id": "scene.kitchen_energize"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Nightlight",
+              "icon": "mdi:weather-night",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "scene.turn_on",
+                "target": {
+                  "entity_id": "scene.kitchen_nightlight"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Andrea HQ",
+              "heading_style": "title",
+              "icon": "mdi:stairs-down"
+            },
+            {
+              "type": "tile",
+              "entity": "light.basement",
+              "name": "Andrea HQ (all)",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.basement_tall_lamp",
+              "name": "Tall Lamp",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.basement_hanging_lamp",
+              "name": "Hanging Lamp",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.hue_white_lamp_1",
+              "name": "Freezer Light",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.basement_shelf_lamp_socket_1",
+              "name": "Shelf Lamp",
+              "icon": "mdi:lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.bedroom_occupancy",
+              "name": "Occupancy",
+              "icon": "mdi:motion-sensor"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Bedroom",
+              "heading_style": "title",
+              "icon": "mdi:bed"
+            },
+            {
+              "type": "tile",
+              "entity": "light.tiffany_lamp_socket_1",
+              "name": "Tiffany Lamp",
+              "icon": "mdi:lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.dresser_lamp_socket_1",
+              "name": "Dresser Lamp",
+              "icon": "mdi:lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.front_window_lights_socket",
+              "name": "Desk Lamp",
+              "icon": "mdi:desk-lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.living_room_occupancy",
+              "name": "Occupancy",
+              "icon": "mdi:motion-sensor"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Kitchen",
+              "heading_style": "title",
+              "icon": "mdi:silverware-fork-knife"
+            },
+            {
+              "type": "tile",
+              "entity": "light.kitchen_overhead_light",
+              "name": "Overhead 1",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.kitchen_overhead_light_2",
+              "name": "Overhead 2",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Andrea's Office",
+              "heading_style": "title",
+              "icon": "mdi:briefcase"
+            },
+            {
+              "type": "tile",
+              "entity": "light.office_lamp",
+              "name": "Office Lamp",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.office_occupancy",
+              "name": "Occupancy",
+              "icon": "mdi:motion-sensor"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Porch & Front Yard",
+              "heading_style": "title",
+              "icon": "mdi:home-roof"
+            },
+            {
+              "type": "tile",
+              "entity": "light.porch",
+              "name": "Porch Light",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "button",
+              "name": "Bright",
+              "icon": "mdi:brightness-7",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "scene.turn_on",
+                "target": {
+                  "entity_id": "scene.porch_bright"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Glowing Grins",
+              "icon": "mdi:halloween",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "scene.turn_on",
+                "target": {
+                  "entity_id": "scene.porch_glowing_grins"
+                }
+              }
+            },
+            {
+              "type": "tile",
+              "entity": "switch.tp_link_smart_plug_c1c5_tree_lights",
+              "name": "Tree Lights",
+              "icon": "mdi:pine-tree"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.tp_link_smart_plug_c1c5_plug_2",
+              "name": "Bronze Lamp",
+              "icon": "mdi:lamp-outline"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.back_porch_lights",
+              "name": "Christmas Lights",
+              "icon": "mdi:string-lights"
+            },
+            {
+              "type": "tile",
+              "entity": "automation.front_christmas_lights_on",
+              "name": "Auto On (dusk)",
+              "icon": "mdi:weather-sunset-down"
+            },
+            {
+              "type": "tile",
+              "entity": "automation.front_yard_lights_off",
+              "name": "Auto Off (morning)",
+              "icon": "mdi:weather-sunset-up"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Back Yard",
+              "heading_style": "title",
+              "icon": "mdi:tree"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.back_yard_plug_back_yard_lights",
+              "name": "Back Yard Lights",
+              "icon": "mdi:outdoor-lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.tp_link_smart_plug_bea9_back_yard_fan",
+              "name": "Back Yard Fan",
+              "icon": "mdi:fan"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Holiday",
+              "heading_style": "title",
+              "icon": "mdi:pine-tree-box"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.christmas_village_socket",
+              "name": "Christmas Village",
+              "icon": "mdi:home-group"
+            },
+            {
+              "type": "tile",
+              "entity": "automation.christmas_tree_and_village_on",
+              "name": "Village Auto On",
+              "icon": "mdi:calendar-clock"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

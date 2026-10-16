@@ -1,0 +1,964 @@
+# Home Assistant dashboard: All  (url_path: ha-all)
+# Storage-mode dashboard written via hass-mcp on 2026-09-18.
+# To re-apply: Settings > Dashboards > All > ⋮ > Raw configuration editor, paste this file.
+{
+  "title": "All",
+  "views": [
+    {
+      "type": "sections",
+      "title": "All Entities",
+      "path": "all",
+      "icon": "mdi:view-list",
+      "max_columns": 4,
+      "sections": [
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "Lights: Rooms (Hue groups)",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "light.living_room",
+                  "name": "Living Room"
+                },
+                {
+                  "entity": "light.scott_office",
+                  "name": "Scott's Office"
+                },
+                {
+                  "entity": "light.basement",
+                  "name": "Andrea HQ"
+                },
+                {
+                  "entity": "light.porch",
+                  "name": "Porch"
+                },
+                {
+                  "entity": "light.other_other",
+                  "name": "Other"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Lights: Individual",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "light.couch_lamp",
+                  "name": "Couch Lamp"
+                },
+                {
+                  "entity": "light.end_table_lamp",
+                  "name": "End Table Lamp"
+                },
+                {
+                  "entity": "light.reading_lamp",
+                  "name": "Reading Lamp"
+                },
+                {
+                  "entity": "light.sink_light",
+                  "name": "Scott's Office Lamp"
+                },
+                {
+                  "entity": "light.basement_tall_lamp",
+                  "name": "Basement Tall Lamp"
+                },
+                {
+                  "entity": "light.basement_hanging_lamp",
+                  "name": "Basement Hanging Lamp"
+                },
+                {
+                  "entity": "light.hue_white_lamp_1",
+                  "name": "Basement Freezer Light"
+                },
+                {
+                  "entity": "light.office_lamp",
+                  "name": "Andrea's Office Lamp"
+                },
+                {
+                  "entity": "light.kitchen_overhead_light",
+                  "name": "Kitchen Overhead 1"
+                },
+                {
+                  "entity": "light.kitchen_overhead_light_2",
+                  "name": "Kitchen Overhead 2"
+                },
+                {
+                  "entity": "light.porch_light",
+                  "name": "Porch Light"
+                },
+                {
+                  "entity": "light.tiffany_lamp_socket_1",
+                  "name": "Tiffany Lamp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "Switches & Plugs",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "switch.dresser_lamp_socket_1",
+                  "name": "Dresser Lamp"
+                },
+                {
+                  "entity": "switch.front_window_lights_socket",
+                  "name": "Desk Lamp Socket"
+                },
+                {
+                  "entity": "switch.christmas_tree_lights_socket_1",
+                  "name": "Tiffany Lamp Socket"
+                },
+                {
+                  "entity": "switch.christmas_tree_lights_child_lock",
+                  "name": "Tiffany Child Lock"
+                },
+                {
+                  "entity": "switch.basement_shelf_lamp_socket_1",
+                  "name": "Basement Shelf Lamp"
+                },
+                {
+                  "entity": "switch.christmas_village_socket",
+                  "name": "Christmas Village"
+                },
+                {
+                  "entity": "switch.back_porch_lights",
+                  "name": "Christmas Lights (front)"
+                },
+                {
+                  "entity": "switch.tp_link_smart_plug_c1c5_tree_lights",
+                  "name": "Tree Lights"
+                },
+                {
+                  "entity": "switch.tp_link_smart_plug_c1c5_plug_2",
+                  "name": "Bronze Lamp"
+                },
+                {
+                  "entity": "switch.tp_link_smart_plug_c1c5",
+                  "name": "Front Yard Plug"
+                },
+                {
+                  "entity": "switch.tp_link_smart_plug_c1c5_led",
+                  "name": "Front Yard Plug LED"
+                },
+                {
+                  "entity": "switch.back_yard_plug_back_yard_lights",
+                  "name": "Back Yard Lights"
+                },
+                {
+                  "entity": "switch.tp_link_smart_plug_bea9_back_yard_fan",
+                  "name": "Back Yard Fan"
+                },
+                {
+                  "entity": "switch.tp_link_smart_plug_bea9",
+                  "name": "Back Yard Plug"
+                },
+                {
+                  "entity": "switch.tp_link_smart_plug_bea9_led",
+                  "name": "Back Yard Plug LED"
+                },
+                {
+                  "entity": "switch.smart_plug_socket_1",
+                  "name": "Smart Plug Socket 1"
+                },
+                {
+                  "entity": "switch.smart_plug_child_lock",
+                  "name": "Smart Plug Child Lock"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Hue Bridge Automations",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "switch.automation_porch_halloween",
+                  "name": "Porch Halloween"
+                },
+                {
+                  "entity": "switch.automation_office_on",
+                  "name": "Office On"
+                },
+                {
+                  "entity": "switch.automation_away",
+                  "name": "Away"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "HA Automations",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "automation.front_christmas_lights_on",
+                  "name": "Front Yard On"
+                },
+                {
+                  "entity": "automation.front_yard_lights_off",
+                  "name": "Front Yard Off"
+                },
+                {
+                  "entity": "automation.christmas_tree_and_village_on",
+                  "name": "Christmas Tree & Village On"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Scenes",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "scene.kitchen_concentrate",
+                  "name": "Scott's Office: Concentrate"
+                },
+                {
+                  "entity": "scene.kitchen_read",
+                  "name": "Scott's Office: Read"
+                },
+                {
+                  "entity": "scene.kitchen_relax",
+                  "name": "Scott's Office: Relax"
+                },
+                {
+                  "entity": "scene.kitchen_energize",
+                  "name": "Scott's Office: Energize"
+                },
+                {
+                  "entity": "scene.kitchen_nightlight",
+                  "name": "Scott's Office: Nightlight"
+                },
+                {
+                  "entity": "scene.porch_bright",
+                  "name": "Porch: Bright"
+                },
+                {
+                  "entity": "scene.porch_glowing_grins",
+                  "name": "Porch: Glowing Grins"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "Media Players",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "media_player.living_room_2",
+                  "name": "Living Room (Apple TV)"
+                },
+                {
+                  "entity": "media_player.bedroom",
+                  "name": "Bedroom (Apple TV)"
+                },
+                {
+                  "entity": "media_player.living_room",
+                  "name": "TV Room (Sonos)"
+                },
+                {
+                  "entity": "media_player.kitchen_2",
+                  "name": "Kitchen (Sonos)"
+                },
+                {
+                  "entity": "media_player.office",
+                  "name": "Scott's Office (Sonos)"
+                },
+                {
+                  "entity": "media_player.dining_room",
+                  "name": "Bedroom (Sonos)"
+                },
+                {
+                  "entity": "media_player.kitchen",
+                  "name": "Andrea's HQ (Sonos)"
+                },
+                {
+                  "entity": "media_player.unnamed_room_2",
+                  "name": "Dining Room (Sonos, offline)"
+                },
+                {
+                  "entity": "media_player.unnamed_room",
+                  "name": "Sonos Roam (offline)"
+                },
+                {
+                  "entity": "remote.living_room",
+                  "name": "Living Room Remote"
+                },
+                {
+                  "entity": "remote.bedroom",
+                  "name": "Bedroom Remote"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Sonos: TV Room Settings",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "number.living_room_bass",
+                  "name": "Bass"
+                },
+                {
+                  "entity": "number.living_room_treble",
+                  "name": "Treble"
+                },
+                {
+                  "entity": "number.living_room_balance",
+                  "name": "Balance"
+                },
+                {
+                  "entity": "number.living_room_audio_delay",
+                  "name": "Audio Delay"
+                },
+                {
+                  "entity": "number.living_room_surround_level",
+                  "name": "Surround Level"
+                },
+                {
+                  "entity": "number.living_room_music_surround_level",
+                  "name": "Music Surround Level"
+                },
+                {
+                  "entity": "switch.living_room_loudness",
+                  "name": "Loudness"
+                },
+                {
+                  "entity": "switch.living_room_crossfade",
+                  "name": "Crossfade"
+                },
+                {
+                  "entity": "switch.living_room_night_sound",
+                  "name": "Night Sound"
+                },
+                {
+                  "entity": "switch.living_room_speech_enhancement",
+                  "name": "Speech Enhancement"
+                },
+                {
+                  "entity": "switch.living_room_surround_enabled",
+                  "name": "Surround"
+                },
+                {
+                  "entity": "switch.living_room_surround_music_full_volume",
+                  "name": "Surround Music Full Volume"
+                },
+                {
+                  "entity": "switch.tv_room_tv_autoplay",
+                  "name": "TV Autoplay"
+                },
+                {
+                  "entity": "switch.tv_room_ungroup_on_autoplay",
+                  "name": "Ungroup on Autoplay"
+                },
+                {
+                  "entity": "sensor.living_room_audio_input_format",
+                  "name": "Audio Input Format"
+                },
+                {
+                  "entity": "binary_sensor.living_room_keyboard_focus",
+                  "name": "Keyboard Focus"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Sonos: Other Speaker Settings",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "number.kitchen_bass_2",
+                  "name": "Kitchen Bass"
+                },
+                {
+                  "entity": "number.kitchen_treble_2",
+                  "name": "Kitchen Treble"
+                },
+                {
+                  "entity": "number.kitchen_balance_2",
+                  "name": "Kitchen Balance"
+                },
+                {
+                  "entity": "switch.kitchen_loudness_2",
+                  "name": "Kitchen Loudness"
+                },
+                {
+                  "entity": "switch.kitchen_crossfade_2",
+                  "name": "Kitchen Crossfade"
+                },
+                {
+                  "entity": "switch.kitchen_tv_autoplay",
+                  "name": "Kitchen TV Autoplay"
+                },
+                {
+                  "entity": "switch.kitchen_ungroup_on_autoplay",
+                  "name": "Kitchen Ungroup on Autoplay"
+                },
+                {
+                  "entity": "number.office_bass",
+                  "name": "Scott's Office Bass"
+                },
+                {
+                  "entity": "number.office_treble",
+                  "name": "Scott's Office Treble"
+                },
+                {
+                  "entity": "number.office_balance",
+                  "name": "Scott's Office Balance"
+                },
+                {
+                  "entity": "switch.office_loudness",
+                  "name": "Scott's Office Loudness"
+                },
+                {
+                  "entity": "switch.office_crossfade",
+                  "name": "Scott's Office Crossfade"
+                },
+                {
+                  "entity": "switch.scotts_office_tv_autoplay",
+                  "name": "Scott's Office TV Autoplay"
+                },
+                {
+                  "entity": "switch.scotts_office_ungroup_on_autoplay",
+                  "name": "Scott's Office Ungroup on Autoplay"
+                },
+                {
+                  "entity": "number.dining_room_bass",
+                  "name": "Bedroom Bass"
+                },
+                {
+                  "entity": "number.dining_room_treble",
+                  "name": "Bedroom Treble"
+                },
+                {
+                  "entity": "number.dining_room_balance",
+                  "name": "Bedroom Balance"
+                },
+                {
+                  "entity": "switch.dining_room_loudness",
+                  "name": "Bedroom Loudness"
+                },
+                {
+                  "entity": "switch.dining_room_crossfade",
+                  "name": "Bedroom Crossfade"
+                },
+                {
+                  "entity": "switch.bedroom_tv_autoplay",
+                  "name": "Bedroom TV Autoplay"
+                },
+                {
+                  "entity": "switch.bedroom_ungroup_on_autoplay",
+                  "name": "Bedroom Ungroup on Autoplay"
+                },
+                {
+                  "entity": "number.kitchen_bass",
+                  "name": "Andrea's HQ Bass"
+                },
+                {
+                  "entity": "number.kitchen_treble",
+                  "name": "Andrea's HQ Treble"
+                },
+                {
+                  "entity": "number.kitchen_balance",
+                  "name": "Andrea's HQ Balance"
+                },
+                {
+                  "entity": "switch.kitchen_loudness",
+                  "name": "Andrea's HQ Loudness"
+                },
+                {
+                  "entity": "switch.kitchen_crossfade",
+                  "name": "Andrea's HQ Crossfade"
+                },
+                {
+                  "entity": "switch.andreas_hq_tv_autoplay",
+                  "name": "Andrea's HQ TV Autoplay"
+                },
+                {
+                  "entity": "switch.andreas_hq_ungroup_on_autoplay",
+                  "name": "Andrea's HQ Ungroup on Autoplay"
+                },
+                {
+                  "entity": "number.unnamed_room_bass_2",
+                  "name": "Dining Room Bass"
+                },
+                {
+                  "entity": "number.unnamed_room_treble_2",
+                  "name": "Dining Room Treble"
+                },
+                {
+                  "entity": "number.unnamed_room_balance_2",
+                  "name": "Dining Room Balance"
+                },
+                {
+                  "entity": "switch.unnamed_room_loudness_2",
+                  "name": "Dining Room Loudness"
+                },
+                {
+                  "entity": "switch.unnamed_room_crossfade_2",
+                  "name": "Dining Room Crossfade"
+                },
+                {
+                  "entity": "number.unnamed_room_bass",
+                  "name": "Roam Bass"
+                },
+                {
+                  "entity": "number.unnamed_room_treble",
+                  "name": "Roam Treble"
+                },
+                {
+                  "entity": "number.unnamed_room_balance",
+                  "name": "Roam Balance"
+                },
+                {
+                  "entity": "switch.unnamed_room_loudness",
+                  "name": "Roam Loudness"
+                },
+                {
+                  "entity": "switch.unnamed_room_crossfade",
+                  "name": "Roam Crossfade"
+                },
+                {
+                  "entity": "sensor.unnamed_room_battery",
+                  "name": "Roam Battery"
+                },
+                {
+                  "entity": "binary_sensor.unnamed_room_charging",
+                  "name": "Roam Charging"
+                },
+                {
+                  "entity": "binary_sensor.unnamed_room_microphone",
+                  "name": "Roam Microphone"
+                },
+                {
+                  "entity": "sensor.office_scotts_office_battery",
+                  "name": "Scott's Office Battery"
+                },
+                {
+                  "entity": "binary_sensor.office_scotts_office_charging",
+                  "name": "Scott's Office Charging"
+                },
+                {
+                  "entity": "binary_sensor.office_scotts_office_microphone",
+                  "name": "Scott's Office Microphone"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "Climate",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "climate.my_ecobee",
+                  "name": "Ecobee"
+                },
+                {
+                  "entity": "climate.my_ecobee_2",
+                  "name": "Ecobee (duplicate)"
+                },
+                {
+                  "entity": "sensor.my_ecobee_temperature",
+                  "name": "Thermostat Temp"
+                },
+                {
+                  "entity": "sensor.my_ecobee_humidity",
+                  "name": "Thermostat Humidity"
+                },
+                {
+                  "entity": "sensor.my_ecobee_temperature_2",
+                  "name": "Thermostat Temp (dup)"
+                },
+                {
+                  "entity": "sensor.my_ecobee_humidity_2",
+                  "name": "Thermostat Humidity (dup)"
+                },
+                {
+                  "entity": "sensor.bedroom_temperature",
+                  "name": "Andrea HQ Temp"
+                },
+                {
+                  "entity": "sensor.living_room_temperature",
+                  "name": "Bedroom Temp"
+                },
+                {
+                  "entity": "sensor.office_temperature",
+                  "name": "Office Temp"
+                },
+                {
+                  "entity": "binary_sensor.my_ecobee_occupancy",
+                  "name": "Thermostat Occupancy"
+                },
+                {
+                  "entity": "binary_sensor.my_ecobee_occupancy_2",
+                  "name": "Thermostat Occupancy (dup)"
+                },
+                {
+                  "entity": "binary_sensor.bedroom_occupancy",
+                  "name": "Andrea HQ Occupancy"
+                },
+                {
+                  "entity": "binary_sensor.living_room_occupancy",
+                  "name": "Bedroom Occupancy"
+                },
+                {
+                  "entity": "binary_sensor.office_occupancy",
+                  "name": "Office Occupancy"
+                },
+                {
+                  "entity": "number.dining_room_my_ecobee_fan_minimum_on_time",
+                  "name": "Fan Min On Time"
+                },
+                {
+                  "entity": "weather.my_ecobee",
+                  "name": "Weather"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Presence",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "person.ssteinbr",
+                  "name": "ssteinbr"
+                },
+                {
+                  "entity": "device_tracker.scotts_iphone",
+                  "name": "Scott's iPhone"
+                },
+                {
+                  "entity": "device_tracker.andreas_iphone",
+                  "name": "Andrea's iPhone"
+                },
+                {
+                  "entity": "device_tracker.andrea_iphone",
+                  "name": "Andrea iPhone (alt)"
+                },
+                {
+                  "entity": "device_tracker.colleen_s_iphone",
+                  "name": "Colleen's iPhone"
+                },
+                {
+                  "entity": "device_tracker.iphone_15",
+                  "name": "iPhone 15"
+                },
+                {
+                  "entity": "device_tracker.andreas_ipad",
+                  "name": "Andrea's iPad"
+                },
+                {
+                  "entity": "device_tracker.hhgthg",
+                  "name": "HHGTHG"
+                },
+                {
+                  "entity": "device_tracker.scotts_macbook_air",
+                  "name": "MacBook Air"
+                },
+                {
+                  "entity": "zone.home",
+                  "name": "Home Zone"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Batteries",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "sensor.scotts_iphone_battery_level",
+                  "name": "Scott's iPhone"
+                },
+                {
+                  "entity": "sensor.scotts_iphone_battery_state",
+                  "name": "Scott's iPhone State"
+                },
+                {
+                  "entity": "sensor.scotts_iphone_watch_battery_level",
+                  "name": "Scott's Watch"
+                },
+                {
+                  "entity": "sensor.andreas_iphone_battery_level",
+                  "name": "Andrea's iPhone"
+                },
+                {
+                  "entity": "sensor.andreas_iphone_battery_state",
+                  "name": "Andrea's iPhone State"
+                },
+                {
+                  "entity": "sensor.andreas_iphone_watch_battery_level",
+                  "name": "Andrea's Watch"
+                },
+                {
+                  "entity": "sensor.andrea_iphone_battery_level",
+                  "name": "Andrea iPhone (alt)"
+                },
+                {
+                  "entity": "sensor.colleen_s_iphone_battery_level",
+                  "name": "Colleen's iPhone"
+                },
+                {
+                  "entity": "sensor.colleen_s_iphone_battery_state",
+                  "name": "Colleen's iPhone State"
+                },
+                {
+                  "entity": "sensor.iphone_battery_level",
+                  "name": "iPhone 15"
+                },
+                {
+                  "entity": "sensor.iphone_watch_battery_level",
+                  "name": "iPhone 15 Watch"
+                },
+                {
+                  "entity": "sensor.andreas_ipad_battery_level",
+                  "name": "Andrea's iPad"
+                },
+                {
+                  "entity": "sensor.hhgthg_battery_level",
+                  "name": "HHGTHG"
+                },
+                {
+                  "entity": "sensor.macbook_air_internal_battery_level",
+                  "name": "MacBook Air"
+                },
+                {
+                  "entity": "sensor.hue_smart_button_1_battery",
+                  "name": "Hue Smart Button"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Sun",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "sun.sun",
+                  "name": "Sun"
+                },
+                {
+                  "entity": "sensor.sun_next_dawn",
+                  "name": "Next Dawn"
+                },
+                {
+                  "entity": "sensor.sun_next_rising",
+                  "name": "Next Sunrise"
+                },
+                {
+                  "entity": "sensor.sun_next_noon",
+                  "name": "Next Noon"
+                },
+                {
+                  "entity": "sensor.sun_next_setting",
+                  "name": "Next Sunset"
+                },
+                {
+                  "entity": "sensor.sun_next_dusk",
+                  "name": "Next Dusk"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "Updates",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "update.home_assistant_core_update",
+                  "name": "HA Core"
+                },
+                {
+                  "entity": "update.home_assistant_operating_system_update",
+                  "name": "HA OS"
+                },
+                {
+                  "entity": "update.home_assistant_supervisor_update",
+                  "name": "Supervisor"
+                },
+                {
+                  "entity": "update.raspberry_pi_4_firmware",
+                  "name": "Pi 4 Firmware"
+                },
+                {
+                  "entity": "update.hacs_update",
+                  "name": "HACS"
+                },
+                {
+                  "entity": "update.sonos_card_update",
+                  "name": "Sonos Card"
+                },
+                {
+                  "entity": "update.terminal_ssh_update",
+                  "name": "Terminal & SSH"
+                },
+                {
+                  "entity": "update.ecosense_radon_update",
+                  "name": "EcoSense Radon"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Backup",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "sensor.backup_backup_manager_state",
+                  "name": "Manager State"
+                },
+                {
+                  "entity": "sensor.backup_last_successful_automatic_backup",
+                  "name": "Last Successful"
+                },
+                {
+                  "entity": "sensor.backup_last_attempted_automatic_backup",
+                  "name": "Last Attempted"
+                },
+                {
+                  "entity": "sensor.backup_next_scheduled_automatic_backup",
+                  "name": "Next Scheduled"
+                },
+                {
+                  "entity": "event.backup_automatic_backup",
+                  "name": "Backup Event"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Network & Hardware",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "binary_sensor.c4000xg_router_wan_status",
+                  "name": "Internet (WAN)"
+                },
+                {
+                  "entity": "sensor.c4000xg_router_external_ip",
+                  "name": "External IP"
+                },
+                {
+                  "entity": "sensor.c4000xg_router_download_speed",
+                  "name": "Download Speed"
+                },
+                {
+                  "entity": "sensor.c4000xg_router_upload_speed",
+                  "name": "Upload Speed"
+                },
+                {
+                  "entity": "binary_sensor.rpi_power_status",
+                  "name": "Pi Power Problem"
+                },
+                {
+                  "entity": "binary_sensor.tp_link_smart_plug_c1c5_cloud_connection",
+                  "name": "Front Plug Cloud"
+                },
+                {
+                  "entity": "binary_sensor.tp_link_smart_plug_bea9_cloud_connection",
+                  "name": "Back Plug Cloud"
+                },
+                {
+                  "entity": "event.hue_smart_button_1_button_1",
+                  "name": "Hue Smart Button"
+                },
+                {
+                  "entity": "select.smart_plug_power_on_behavior",
+                  "name": "Smart Plug Power-on"
+                },
+                {
+                  "entity": "select.smart_plug_indicator_light_mode",
+                  "name": "Smart Plug LED Mode"
+                },
+                {
+                  "entity": "select.christmas_tree_lights_power_on_behavior",
+                  "name": "Tiffany Plug Power-on"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Printer (Brother HL-L2340D)",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "sensor.brother_hl_l2340d_series",
+                  "name": "Status"
+                },
+                {
+                  "entity": "sensor.hl_l2340d_status",
+                  "name": "Status (alt)"
+                },
+                {
+                  "entity": "sensor.hl_l2340d_black_toner_remaining",
+                  "name": "Black Toner"
+                },
+                {
+                  "entity": "sensor.brother_hl_l2340d_series_bk",
+                  "name": "Black Toner (alt)"
+                },
+                {
+                  "entity": "sensor.hl_l2340d_drum_remaining_lifetime",
+                  "name": "Drum Life"
+                },
+                {
+                  "entity": "sensor.hl_l2340d_drum_remaining_pages",
+                  "name": "Drum Pages Left"
+                },
+                {
+                  "entity": "sensor.hl_l2340d_page_counter",
+                  "name": "Page Counter"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Misc",
+              "state_color": true,
+              "entities": [
+                {
+                  "entity": "todo.shopping_list",
+                  "name": "Shopping List"
+                },
+                {
+                  "entity": "conversation.home_assistant",
+                  "name": "Assist"
+                },
+                {
+                  "entity": "tts.google_en_com",
+                  "name": "Google TTS"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

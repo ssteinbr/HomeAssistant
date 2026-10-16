@@ -1,0 +1,871 @@
+# Home Assistant dashboard: Sonos  (url_path: ha-sonos)
+# Storage-mode dashboard written via hass-mcp on 2026-09-18.
+# To re-apply: Settings > Dashboards > Sonos > ⋮ > Raw configuration editor, paste this file.
+{
+  "title": "Sonos",
+  "views": [
+    {
+      "type": "sections",
+      "title": "Sonos",
+      "path": "sonos",
+      "icon": "mdi:speaker-multiple",
+      "max_columns": 4,
+      "badges": [
+        {
+          "type": "entity",
+          "entity": "media_player.living_room",
+          "show_name": true,
+          "show_state": true,
+          "color": "green",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "media_player.living_room",
+              "state": "playing"
+            }
+          ]
+        },
+        {
+          "type": "entity",
+          "entity": "media_player.kitchen_2",
+          "show_name": true,
+          "show_state": true,
+          "color": "green",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "media_player.kitchen_2",
+              "state": "playing"
+            }
+          ]
+        },
+        {
+          "type": "entity",
+          "entity": "media_player.office",
+          "show_name": true,
+          "show_state": true,
+          "color": "green",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "media_player.office",
+              "state": "playing"
+            }
+          ]
+        },
+        {
+          "type": "entity",
+          "entity": "media_player.dining_room",
+          "show_name": true,
+          "show_state": true,
+          "color": "green",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "media_player.dining_room",
+              "state": "playing"
+            }
+          ]
+        },
+        {
+          "type": "entity",
+          "entity": "media_player.kitchen",
+          "show_name": true,
+          "show_state": true,
+          "color": "green",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "media_player.kitchen",
+              "state": "playing"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Speakers & Grouping",
+              "heading_style": "title",
+              "icon": "mdi:speaker-multiple"
+            },
+            {
+              "type": "custom:sonos-card",
+              "entities": [
+                "media_player.living_room",
+                "media_player.kitchen_2",
+                "media_player.office",
+                "media_player.dining_room",
+                "media_player.kitchen"
+              ],
+              "sections": [
+                "player",
+                "volumes",
+                "groups",
+                "grouping",
+                "media browser"
+              ],
+              "title": "",
+              "dynamicVolumeSlider": true
+            }
+          ],
+          "column_span": 2
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Whole House",
+              "heading_style": "title",
+              "icon": "mdi:home-sound-in-outline"
+            },
+            {
+              "type": "button",
+              "name": "Party: Join All to TV Room",
+              "icon": "mdi:party-popper",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.join",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "group_members": [
+                    "media_player.kitchen_2",
+                    "media_player.office",
+                    "media_player.dining_room",
+                    "media_player.kitchen"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Ungroup All",
+              "icon": "mdi:link-off",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.unjoin",
+                "target": {
+                  "entity_id": [
+                    "media_player.living_room",
+                    "media_player.kitchen_2",
+                    "media_player.office",
+                    "media_player.dining_room",
+                    "media_player.kitchen"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Pause All",
+              "icon": "mdi:pause-circle",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.media_pause",
+                "target": {
+                  "entity_id": [
+                    "media_player.living_room",
+                    "media_player.kitchen_2",
+                    "media_player.office",
+                    "media_player.dining_room",
+                    "media_player.kitchen"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Quiet (15%)",
+              "icon": "mdi:volume-low",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.volume_set",
+                "target": {
+                  "entity_id": [
+                    "media_player.living_room",
+                    "media_player.kitchen_2",
+                    "media_player.office",
+                    "media_player.dining_room",
+                    "media_player.kitchen"
+                  ]
+                },
+                "data": {
+                  "volume_level": 0.15
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Normal (30%)",
+              "icon": "mdi:volume-medium",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.volume_set",
+                "target": {
+                  "entity_id": [
+                    "media_player.living_room",
+                    "media_player.kitchen_2",
+                    "media_player.office",
+                    "media_player.dining_room",
+                    "media_player.kitchen"
+                  ]
+                },
+                "data": {
+                  "volume_level": 0.3
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Loud (50%)",
+              "icon": "mdi:volume-high",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.volume_set",
+                "target": {
+                  "entity_id": [
+                    "media_player.living_room",
+                    "media_player.kitchen_2",
+                    "media_player.office",
+                    "media_player.dining_room",
+                    "media_player.kitchen"
+                  ]
+                },
+                "data": {
+                  "volume_level": 0.5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Radio on TV Room",
+              "heading_style": "subtitle",
+              "icon": "mdi:radio-tower"
+            },
+            {
+              "type": "button",
+              "name": "FIP",
+              "icon": "mdi:radio",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.select_source",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "source": "FIP"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "KEXP",
+              "icon": "mdi:radio",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.select_source",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "source": "KEXP"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "KBOO",
+              "icon": "mdi:radio",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.select_source",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "source": "KBOO"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "KMHD",
+              "icon": "mdi:saxophone",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.select_source",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "source": "KMHD"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "San Diego's Jazz 88.3",
+              "icon": "mdi:saxophone",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.select_source",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "source": "San Diego's Jazz 88.3"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "All Classical Portland",
+              "icon": "mdi:violin",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.select_source",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "source": "All Classical Portland"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "KCRW",
+              "icon": "mdi:radio",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.select_source",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "source": "KCRW"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "name": "Record Player",
+              "icon": "mdi:album",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "media_player.select_source",
+                "target": {
+                  "entity_id": "media_player.living_room"
+                },
+                "data": {
+                  "source": "Record Player"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "TV Room",
+              "heading_style": "title",
+              "icon": "mdi:television"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.living_room"
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.living_room",
+              "name": "Volume",
+              "features": [
+                {
+                  "type": "media-player-volume-slider"
+                }
+              ],
+              "features_position": "inline",
+              "hide_state": true
+            },
+            {
+              "type": "tile",
+              "entity": "number.living_room_bass",
+              "name": "Bass",
+              "icon": "mdi:equalizer",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.living_room_treble",
+              "name": "Treble",
+              "icon": "mdi:equalizer-outline",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.living_room_balance",
+              "name": "Balance",
+              "icon": "mdi:tune",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "switch.living_room_loudness",
+              "name": "Loudness",
+              "icon": "mdi:volume-high"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.living_room_crossfade",
+              "name": "Crossfade",
+              "icon": "mdi:shuffle-variant"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.living_room_night_sound",
+              "name": "Night Sound",
+              "icon": "mdi:weather-night"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.living_room_speech_enhancement",
+              "name": "Speech Enhance",
+              "icon": "mdi:account-voice"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.living_room_surround_enabled",
+              "name": "Surround",
+              "icon": "mdi:surround-sound"
+            },
+            {
+              "type": "tile",
+              "entity": "number.living_room_surround_level",
+              "name": "Surround Level",
+              "icon": "mdi:surround-sound-5-1",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.living_room_music_surround_level",
+              "name": "Music Surround",
+              "icon": "mdi:music-note",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "switch.living_room_surround_music_full_volume",
+              "name": "Surround Full Vol",
+              "icon": "mdi:volume-equal"
+            },
+            {
+              "type": "tile",
+              "entity": "number.living_room_audio_delay",
+              "name": "Audio Delay",
+              "icon": "mdi:timer-sand",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "buttons"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "switch.tv_room_tv_autoplay",
+              "name": "TV Autoplay",
+              "icon": "mdi:television-play"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.living_room_audio_input_format",
+              "name": "Input Format",
+              "icon": "mdi:audio-input-rca"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Kitchen",
+              "heading_style": "title",
+              "icon": "mdi:silverware-fork-knife"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.kitchen_2"
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.kitchen_2",
+              "name": "Volume",
+              "features": [
+                {
+                  "type": "media-player-volume-slider"
+                }
+              ],
+              "features_position": "inline",
+              "hide_state": true
+            },
+            {
+              "type": "tile",
+              "entity": "number.kitchen_bass_2",
+              "name": "Bass",
+              "icon": "mdi:equalizer",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.kitchen_treble_2",
+              "name": "Treble",
+              "icon": "mdi:equalizer-outline",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.kitchen_balance_2",
+              "name": "Balance",
+              "icon": "mdi:tune",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "switch.kitchen_loudness_2",
+              "name": "Loudness",
+              "icon": "mdi:volume-high"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.kitchen_crossfade_2",
+              "name": "Crossfade",
+              "icon": "mdi:shuffle-variant"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Scott's Office",
+              "heading_style": "title",
+              "icon": "mdi:desk-lamp"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.office"
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.office",
+              "name": "Volume",
+              "features": [
+                {
+                  "type": "media-player-volume-slider"
+                }
+              ],
+              "features_position": "inline",
+              "hide_state": true
+            },
+            {
+              "type": "tile",
+              "entity": "number.office_bass",
+              "name": "Bass",
+              "icon": "mdi:equalizer",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.office_treble",
+              "name": "Treble",
+              "icon": "mdi:equalizer-outline",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.office_balance",
+              "name": "Balance",
+              "icon": "mdi:tune",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "switch.office_loudness",
+              "name": "Loudness",
+              "icon": "mdi:volume-high"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.office_crossfade",
+              "name": "Crossfade",
+              "icon": "mdi:shuffle-variant"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Bedroom",
+              "heading_style": "title",
+              "icon": "mdi:bed"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.dining_room"
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.dining_room",
+              "name": "Volume",
+              "features": [
+                {
+                  "type": "media-player-volume-slider"
+                }
+              ],
+              "features_position": "inline",
+              "hide_state": true
+            },
+            {
+              "type": "tile",
+              "entity": "number.dining_room_bass",
+              "name": "Bass",
+              "icon": "mdi:equalizer",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.dining_room_treble",
+              "name": "Treble",
+              "icon": "mdi:equalizer-outline",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.dining_room_balance",
+              "name": "Balance",
+              "icon": "mdi:tune",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "switch.dining_room_loudness",
+              "name": "Loudness",
+              "icon": "mdi:volume-high"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.dining_room_crossfade",
+              "name": "Crossfade",
+              "icon": "mdi:shuffle-variant"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Andrea's HQ",
+              "heading_style": "title",
+              "icon": "mdi:stairs-down"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.kitchen"
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.kitchen",
+              "name": "Volume",
+              "features": [
+                {
+                  "type": "media-player-volume-slider"
+                }
+              ],
+              "features_position": "inline",
+              "hide_state": true
+            },
+            {
+              "type": "tile",
+              "entity": "number.kitchen_bass",
+              "name": "Bass",
+              "icon": "mdi:equalizer",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.kitchen_treble",
+              "name": "Treble",
+              "icon": "mdi:equalizer-outline",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "number.kitchen_balance",
+              "name": "Balance",
+              "icon": "mdi:tune",
+              "features": [
+                {
+                  "type": "numeric-input",
+                  "style": "slider"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "switch.kitchen_loudness",
+              "name": "Loudness",
+              "icon": "mdi:volume-high"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.kitchen_crossfade",
+              "name": "Crossfade",
+              "icon": "mdi:shuffle-variant"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Offline Speakers",
+              "heading_style": "subtitle",
+              "icon": "mdi:speaker-off"
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.unnamed_room_2",
+              "name": "Dining Room",
+              "icon": "mdi:speaker"
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.unnamed_room",
+              "name": "Sonos Roam",
+              "icon": "mdi:speaker-wireless"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.unnamed_room_battery",
+              "name": "Roam Battery",
+              "icon": "mdi:battery"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

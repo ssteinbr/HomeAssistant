@@ -1,0 +1,718 @@
+# Home Assistant dashboard: Overview  (url_path: ha-overview)
+# Storage-mode dashboard written via hass-mcp on 2026-09-18.
+# To re-apply: Settings > Dashboards > Overview > ⋮ > Raw configuration editor, paste this file.
+{
+  "title": "Overview",
+  "views": [
+    {
+      "type": "sections",
+      "title": "Home",
+      "path": "home",
+      "icon": "mdi:home",
+      "max_columns": 4,
+      "badges": [
+        {
+          "type": "entity",
+          "entity": "person.ssteinbr",
+          "show_name": false,
+          "show_icon": true
+        },
+        {
+          "type": "entity",
+          "entity": "weather.my_ecobee",
+          "show_name": false
+        },
+        {
+          "type": "entity",
+          "entity": "sensor.my_ecobee_temperature",
+          "name": "Inside",
+          "show_name": true,
+          "color": "orange"
+        },
+        {
+          "type": "entity",
+          "entity": "sensor.my_ecobee_humidity",
+          "name": "Humidity",
+          "show_name": true,
+          "color": "blue"
+        },
+        {
+          "type": "entity",
+          "entity": "sun.sun",
+          "show_name": false
+        },
+        {
+          "type": "entity",
+          "entity": "binary_sensor.rpi_power_status",
+          "name": "Pi Power",
+          "show_name": true,
+          "color": "red",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "binary_sensor.rpi_power_status",
+              "state": "on"
+            }
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Who's Home",
+              "heading_style": "title",
+              "icon": "mdi:account-group"
+            },
+            {
+              "type": "tile",
+              "entity": "device_tracker.scotts_iphone",
+              "name": "Scott",
+              "icon": "mdi:account",
+              "color": "blue",
+              "state_content": [
+                "state",
+                "last_changed"
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "device_tracker.andreas_iphone",
+              "name": "Andrea",
+              "icon": "mdi:account",
+              "color": "pink",
+              "state_content": [
+                "state",
+                "last_changed"
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "device_tracker.colleen_s_iphone",
+              "name": "Colleen",
+              "icon": "mdi:account",
+              "color": "purple",
+              "state_content": [
+                "state",
+                "last_changed"
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "device_tracker.iphone_15",
+              "name": "iPhone 15",
+              "icon": "mdi:account",
+              "color": "teal",
+              "state_content": [
+                "state",
+                "last_changed"
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.scotts_iphone_battery_level",
+              "name": "Scott's iPhone",
+              "icon": "mdi:battery"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.andreas_iphone_battery_level",
+              "name": "Andrea's iPhone",
+              "icon": "mdi:battery"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.colleen_s_iphone_battery_level",
+              "name": "Colleen's iPhone",
+              "icon": "mdi:battery"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.andreas_ipad_battery_level",
+              "name": "Andrea's iPad",
+              "icon": "mdi:tablet"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Climate",
+              "heading_style": "title",
+              "icon": "mdi:thermostat"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.my_ecobee",
+              "name": "Ecobee",
+              "features": [
+                {
+                  "type": "climate-hvac-modes",
+                  "hvac_modes": [
+                    "heat_cool",
+                    "heat",
+                    "cool",
+                    "off"
+                  ]
+                },
+                {
+                  "type": "climate-preset-modes",
+                  "style": "dropdown",
+                  "preset_modes": [
+                    "home",
+                    "away",
+                    "sleep"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.my_ecobee_temperature",
+              "name": "Thermostat",
+              "icon": "mdi:thermometer"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.bedroom_temperature",
+              "name": "Andrea HQ",
+              "icon": "mdi:thermometer"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.office_temperature",
+              "name": "Office",
+              "icon": "mdi:thermometer"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.living_room_temperature",
+              "name": "Bedroom",
+              "icon": "mdi:thermometer"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.my_ecobee_occupancy",
+              "name": "Thermostat Occ.",
+              "icon": "mdi:motion-sensor"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.bedroom_occupancy",
+              "name": "Andrea HQ Occ.",
+              "icon": "mdi:motion-sensor"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.living_room_occupancy",
+              "name": "Bedroom Occ.",
+              "icon": "mdi:motion-sensor"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.office_occupancy",
+              "name": "Office Occ.",
+              "icon": "mdi:motion-sensor"
+            },
+            {
+              "type": "weather-forecast",
+              "entity": "weather.my_ecobee",
+              "forecast_type": "daily",
+              "show_current": true,
+              "show_forecast": true
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Lights",
+              "heading_style": "title",
+              "icon": "mdi:lightbulb-group"
+            },
+            {
+              "type": "button",
+              "name": "All Lights Off",
+              "icon": "mdi:lightbulb-off",
+              "show_state": false,
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "homeassistant.turn_off",
+                "target": {
+                  "entity_id": [
+                    "light.living_room",
+                    "light.scott_office",
+                    "light.basement",
+                    "light.porch",
+                    "light.other_other",
+                    "light.tiffany_lamp_socket_1",
+                    "switch.dresser_lamp_socket_1",
+                    "switch.front_window_lights_socket",
+                    "switch.basement_shelf_lamp_socket_1",
+                    "switch.christmas_village_socket",
+                    "switch.tp_link_smart_plug_c1c5_tree_lights",
+                    "switch.tp_link_smart_plug_c1c5_plug_2",
+                    "switch.back_porch_lights",
+                    "switch.back_yard_plug_back_yard_lights"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "tile",
+              "entity": "light.living_room",
+              "name": "Living Room",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.scott_office",
+              "name": "Scott's Office",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.basement",
+              "name": "Andrea HQ",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.porch",
+              "name": "Porch",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.other_other",
+              "name": "Other Lamps",
+              "features": [
+                {
+                  "type": "light-brightness"
+                },
+                {
+                  "type": "light-color-temp"
+                }
+              ],
+              "features_position": "bottom"
+            },
+            {
+              "type": "tile",
+              "entity": "light.tiffany_lamp_socket_1",
+              "name": "Tiffany Lamp",
+              "icon": "mdi:lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.dresser_lamp_socket_1",
+              "name": "Dresser Lamp",
+              "icon": "mdi:lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.back_yard_plug_back_yard_lights",
+              "name": "Back Yard Lights",
+              "icon": "mdi:outdoor-lamp"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.tp_link_smart_plug_c1c5_tree_lights",
+              "name": "Tree Lights",
+              "icon": "mdi:pine-tree"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Now Playing",
+              "heading_style": "title",
+              "icon": "mdi:play-circle"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.living_room_2",
+              "visibility": [
+                {
+                  "condition": "state",
+                  "entity": "media_player.living_room_2",
+                  "state_not": "off"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.living_room_2",
+                  "state_not": "unavailable"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.living_room_2",
+                  "state_not": "unknown"
+                }
+              ]
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.bedroom",
+              "visibility": [
+                {
+                  "condition": "state",
+                  "entity": "media_player.bedroom",
+                  "state_not": "off"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.bedroom",
+                  "state_not": "unavailable"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.bedroom",
+                  "state_not": "unknown"
+                }
+              ]
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.living_room",
+              "visibility": [
+                {
+                  "condition": "state",
+                  "entity": "media_player.living_room",
+                  "state_not": "off"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.living_room",
+                  "state_not": "unavailable"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.living_room",
+                  "state_not": "unknown"
+                }
+              ]
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.kitchen_2",
+              "visibility": [
+                {
+                  "condition": "state",
+                  "entity": "media_player.kitchen_2",
+                  "state_not": "off"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.kitchen_2",
+                  "state_not": "unavailable"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.kitchen_2",
+                  "state_not": "unknown"
+                }
+              ]
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.office",
+              "visibility": [
+                {
+                  "condition": "state",
+                  "entity": "media_player.office",
+                  "state_not": "off"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.office",
+                  "state_not": "unavailable"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.office",
+                  "state_not": "unknown"
+                }
+              ]
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.dining_room",
+              "visibility": [
+                {
+                  "condition": "state",
+                  "entity": "media_player.dining_room",
+                  "state_not": "off"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.dining_room",
+                  "state_not": "unavailable"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.dining_room",
+                  "state_not": "unknown"
+                }
+              ]
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.kitchen",
+              "visibility": [
+                {
+                  "condition": "state",
+                  "entity": "media_player.kitchen",
+                  "state_not": "off"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.kitchen",
+                  "state_not": "unavailable"
+                },
+                {
+                  "condition": "state",
+                  "entity": "media_player.kitchen",
+                  "state_not": "unknown"
+                }
+              ]
+            },
+            {
+              "type": "markdown",
+              "content": "Nothing is playing.",
+              "visibility": [
+                {
+                  "condition": "and",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "media_player.living_room",
+                      "state_not": "playing"
+                    },
+                    {
+                      "condition": "state",
+                      "entity": "media_player.kitchen_2",
+                      "state_not": "playing"
+                    },
+                    {
+                      "condition": "state",
+                      "entity": "media_player.office",
+                      "state_not": "playing"
+                    },
+                    {
+                      "condition": "state",
+                      "entity": "media_player.dining_room",
+                      "state_not": "playing"
+                    },
+                    {
+                      "condition": "state",
+                      "entity": "media_player.kitchen",
+                      "state_not": "playing"
+                    },
+                    {
+                      "condition": "state",
+                      "entity": "media_player.living_room_2",
+                      "state_not": "playing"
+                    },
+                    {
+                      "condition": "state",
+                      "entity": "media_player.bedroom",
+                      "state_not": "playing"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Apple TV",
+              "heading_style": "title",
+              "icon": "mdi:apple"
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.living_room_2",
+              "name": "Living Room",
+              "icon": "mdi:television",
+              "features": [
+                {
+                  "type": "media-player-playback"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "media_player.bedroom",
+              "name": "Bedroom",
+              "icon": "mdi:television",
+              "features": [
+                {
+                  "type": "media-player-playback"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "remote.living_room",
+              "name": "LR Remote",
+              "icon": "mdi:remote-tv"
+            },
+            {
+              "type": "tile",
+              "entity": "remote.bedroom",
+              "name": "BR Remote",
+              "icon": "mdi:remote-tv"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "Outside",
+              "heading_style": "title",
+              "icon": "mdi:pine-tree"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.tp_link_smart_plug_bea9_back_yard_fan",
+              "name": "Back Yard Fan",
+              "icon": "mdi:fan"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.tp_link_smart_plug_c1c5_plug_2",
+              "name": "Bronze Lamp",
+              "icon": "mdi:lamp-outline"
+            },
+            {
+              "type": "tile",
+              "entity": "switch.back_porch_lights",
+              "name": "Christmas Lights",
+              "icon": "mdi:string-lights"
+            },
+            {
+              "type": "tile",
+              "entity": "automation.front_christmas_lights_on",
+              "name": "Front Yard Auto On",
+              "icon": "mdi:weather-sunset-down"
+            },
+            {
+              "type": "tile",
+              "entity": "automation.front_yard_lights_off",
+              "name": "Front Yard Auto Off",
+              "icon": "mdi:weather-sunset-up"
+            }
+          ]
+        },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "heading",
+              "heading": "System",
+              "heading_style": "title",
+              "icon": "mdi:server"
+            },
+            {
+              "type": "tile",
+              "entity": "update.home_assistant_core_update",
+              "name": "HA Core",
+              "features": [
+                {
+                  "type": "update-actions"
+                }
+              ]
+            },
+            {
+              "type": "tile",
+              "entity": "update.home_assistant_operating_system_update",
+              "name": "HA OS"
+            },
+            {
+              "type": "tile",
+              "entity": "update.home_assistant_supervisor_update",
+              "name": "Supervisor"
+            },
+            {
+              "type": "tile",
+              "entity": "update.hacs_update",
+              "name": "HACS"
+            },
+            {
+              "type": "tile",
+              "entity": "update.sonos_card_update",
+              "name": "Sonos Card"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.backup_backup_manager_state",
+              "name": "Backup",
+              "icon": "mdi:backup-restore"
+            },
+            {
+              "type": "tile",
+              "entity": "sensor.backup_last_successful_automatic_backup",
+              "name": "Last Backup",
+              "icon": "mdi:calendar-check"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.rpi_power_status",
+              "name": "Pi Power",
+              "icon": "mdi:raspberry-pi"
+            },
+            {
+              "type": "tile",
+              "entity": "binary_sensor.c4000xg_router_wan_status",
+              "name": "Internet",
+              "icon": "mdi:web"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
