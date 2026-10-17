@@ -33,34 +33,6 @@
         },
         {
           "type": "entity",
-          "entity": "light.scott_office",
-          "name": "Scott's Office",
-          "show_name": true,
-          "color": "amber",
-          "visibility": [
-            {
-              "condition": "state",
-              "entity": "light.scott_office",
-              "state": "on"
-            }
-          ]
-        },
-        {
-          "type": "entity",
-          "entity": "light.basement",
-          "name": "Andrea HQ",
-          "show_name": true,
-          "color": "amber",
-          "visibility": [
-            {
-              "condition": "state",
-              "entity": "light.basement",
-              "state": "on"
-            }
-          ]
-        },
-        {
-          "type": "entity",
           "entity": "light.porch",
           "name": "Porch",
           "show_name": true,
@@ -95,10 +67,7 @@
                 "target": {
                   "entity_id": [
                     "light.living_room",
-                    "light.scott_office",
-                    "light.basement",
                     "light.porch",
-                    "light.other_other",
                     "light.tiffany_lamp_socket_1",
                     "switch.dresser_lamp_socket_1",
                     "switch.front_window_lights_socket",
@@ -122,9 +91,7 @@
                 "perform_action": "light.turn_on",
                 "target": {
                   "entity_id": [
-                    "light.living_room",
-                    "light.scott_office",
-                    "light.basement"
+                    "light.living_room"
                   ]
                 },
                 "data": {
@@ -158,8 +125,7 @@
                 "perform_action": "light.turn_on",
                 "target": {
                   "entity_id": [
-                    "light.living_room",
-                    "light.scott_office"
+                    "light.living_room"
                   ]
                 },
                 "data": {
@@ -222,7 +188,7 @@
             {
               "type": "tile",
               "entity": "light.reading_lamp",
-              "name": "Reading Lamp",
+              "name": "TV Lamp",
               "features": [
                 {
                   "type": "light-brightness"
@@ -232,96 +198,6 @@
                 }
               ],
               "features_position": "bottom"
-            }
-          ]
-        },
-        {
-          "type": "grid",
-          "cards": [
-            {
-              "type": "heading",
-              "heading": "Scott's Office",
-              "heading_style": "title",
-              "icon": "mdi:desk-lamp"
-            },
-            {
-              "type": "tile",
-              "entity": "light.scott_office",
-              "name": "Office Light",
-              "features": [
-                {
-                  "type": "light-brightness"
-                },
-                {
-                  "type": "light-color-temp"
-                }
-              ],
-              "features_position": "bottom"
-            },
-            {
-              "type": "button",
-              "name": "Concentrate",
-              "icon": "mdi:head-lightbulb",
-              "show_state": false,
-              "tap_action": {
-                "action": "perform-action",
-                "perform_action": "scene.turn_on",
-                "target": {
-                  "entity_id": "scene.kitchen_concentrate"
-                }
-              }
-            },
-            {
-              "type": "button",
-              "name": "Read",
-              "icon": "mdi:book-open-variant",
-              "show_state": false,
-              "tap_action": {
-                "action": "perform-action",
-                "perform_action": "scene.turn_on",
-                "target": {
-                  "entity_id": "scene.kitchen_read"
-                }
-              }
-            },
-            {
-              "type": "button",
-              "name": "Relax",
-              "icon": "mdi:sofa-outline",
-              "show_state": false,
-              "tap_action": {
-                "action": "perform-action",
-                "perform_action": "scene.turn_on",
-                "target": {
-                  "entity_id": "scene.kitchen_relax"
-                }
-              }
-            },
-            {
-              "type": "button",
-              "name": "Energize",
-              "icon": "mdi:white-balance-sunny",
-              "show_state": false,
-              "tap_action": {
-                "action": "perform-action",
-                "perform_action": "scene.turn_on",
-                "target": {
-                  "entity_id": "scene.kitchen_energize"
-                }
-              }
-            },
-            {
-              "type": "button",
-              "name": "Nightlight",
-              "icon": "mdi:weather-night",
-              "show_state": false,
-              "tap_action": {
-                "action": "perform-action",
-                "perform_action": "scene.turn_on",
-                "target": {
-                  "entity_id": "scene.kitchen_nightlight"
-                }
-              }
             }
           ]
         },
@@ -333,50 +209,6 @@
               "heading": "Andrea HQ",
               "heading_style": "title",
               "icon": "mdi:stairs-down"
-            },
-            {
-              "type": "tile",
-              "entity": "light.basement",
-              "name": "Andrea HQ (all)",
-              "features": [
-                {
-                  "type": "light-brightness"
-                }
-              ],
-              "features_position": "bottom"
-            },
-            {
-              "type": "tile",
-              "entity": "light.basement_tall_lamp",
-              "name": "Tall Lamp",
-              "features": [
-                {
-                  "type": "light-brightness"
-                }
-              ],
-              "features_position": "bottom"
-            },
-            {
-              "type": "tile",
-              "entity": "light.basement_hanging_lamp",
-              "name": "Hanging Lamp",
-              "features": [
-                {
-                  "type": "light-brightness"
-                }
-              ],
-              "features_position": "bottom"
-            },
-            {
-              "type": "tile",
-              "entity": "light.hue_white_lamp_1",
-              "name": "Freezer Light",
-              "features": [
-                {
-                  "type": "light-brightness"
-                }
-              ],
-              "features_position": "bottom"
             },
             {
               "type": "tile",
@@ -432,53 +264,9 @@
           "cards": [
             {
               "type": "heading",
-              "heading": "Kitchen",
-              "heading_style": "title",
-              "icon": "mdi:silverware-fork-knife"
-            },
-            {
-              "type": "tile",
-              "entity": "light.kitchen_overhead_light",
-              "name": "Overhead 1",
-              "features": [
-                {
-                  "type": "light-brightness"
-                }
-              ],
-              "features_position": "bottom"
-            },
-            {
-              "type": "tile",
-              "entity": "light.kitchen_overhead_light_2",
-              "name": "Overhead 2",
-              "features": [
-                {
-                  "type": "light-brightness"
-                }
-              ],
-              "features_position": "bottom"
-            }
-          ]
-        },
-        {
-          "type": "grid",
-          "cards": [
-            {
-              "type": "heading",
               "heading": "Andrea's Office",
               "heading_style": "title",
               "icon": "mdi:briefcase"
-            },
-            {
-              "type": "tile",
-              "entity": "light.office_lamp",
-              "name": "Office Lamp",
-              "features": [
-                {
-                  "type": "light-brightness"
-                }
-              ],
-              "features_position": "bottom"
             },
             {
               "type": "tile",
