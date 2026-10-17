@@ -24,20 +24,8 @@
                   "name": "Living Room"
                 },
                 {
-                  "entity": "light.scott_office",
-                  "name": "Scott's Office"
-                },
-                {
-                  "entity": "light.basement",
-                  "name": "Andrea HQ"
-                },
-                {
                   "entity": "light.porch",
                   "name": "Porch"
-                },
-                {
-                  "entity": "light.other_other",
-                  "name": "Other"
                 }
               ]
             },
@@ -56,35 +44,7 @@
                 },
                 {
                   "entity": "light.reading_lamp",
-                  "name": "Reading Lamp"
-                },
-                {
-                  "entity": "light.sink_light",
-                  "name": "Scott's Office Lamp"
-                },
-                {
-                  "entity": "light.basement_tall_lamp",
-                  "name": "Basement Tall Lamp"
-                },
-                {
-                  "entity": "light.basement_hanging_lamp",
-                  "name": "Basement Hanging Lamp"
-                },
-                {
-                  "entity": "light.hue_white_lamp_1",
-                  "name": "Basement Freezer Light"
-                },
-                {
-                  "entity": "light.office_lamp",
-                  "name": "Andrea's Office Lamp"
-                },
-                {
-                  "entity": "light.kitchen_overhead_light",
-                  "name": "Kitchen Overhead 1"
-                },
-                {
-                  "entity": "light.kitchen_overhead_light_2",
-                  "name": "Kitchen Overhead 2"
+                  "name": "TV Lamp"
                 },
                 {
                   "entity": "light.porch_light",
@@ -219,26 +179,6 @@
               "title": "Scenes",
               "state_color": true,
               "entities": [
-                {
-                  "entity": "scene.kitchen_concentrate",
-                  "name": "Scott's Office: Concentrate"
-                },
-                {
-                  "entity": "scene.kitchen_read",
-                  "name": "Scott's Office: Read"
-                },
-                {
-                  "entity": "scene.kitchen_relax",
-                  "name": "Scott's Office: Relax"
-                },
-                {
-                  "entity": "scene.kitchen_energize",
-                  "name": "Scott's Office: Energize"
-                },
-                {
-                  "entity": "scene.kitchen_nightlight",
-                  "name": "Scott's Office: Nightlight"
-                },
                 {
                   "entity": "scene.porch_bright",
                   "name": "Porch: Bright"

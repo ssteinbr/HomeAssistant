@@ -247,10 +247,7 @@
                 "target": {
                   "entity_id": [
                     "light.living_room",
-                    "light.scott_office",
-                    "light.basement",
                     "light.porch",
-                    "light.other_other",
                     "light.tiffany_lamp_socket_1",
                     "switch.dresser_lamp_socket_1",
                     "switch.front_window_lights_socket",
@@ -280,8 +277,8 @@
             },
             {
               "type": "tile",
-              "entity": "light.scott_office",
-              "name": "Scott's Office",
+              "entity": "light.reading_lamp",
+              "name": "TV Lamp",
               "features": [
                 {
                   "type": "light-brightness"
@@ -290,37 +287,13 @@
                   "type": "light-color-temp"
                 }
               ],
-              "features_position": "bottom"
-            },
-            {
-              "type": "tile",
-              "entity": "light.basement",
-              "name": "Andrea HQ",
-              "features": [
-                {
-                  "type": "light-brightness"
-                }
-              ],
-              "features_position": "bottom"
+              "features_position": "bottom",
+              "icon": "mdi:lamp"
             },
             {
               "type": "tile",
               "entity": "light.porch",
               "name": "Porch",
-              "features": [
-                {
-                  "type": "light-brightness"
-                },
-                {
-                  "type": "light-color-temp"
-                }
-              ],
-              "features_position": "bottom"
-            },
-            {
-              "type": "tile",
-              "entity": "light.other_other",
-              "name": "Other Lamps",
               "features": [
                 {
                   "type": "light-brightness"
