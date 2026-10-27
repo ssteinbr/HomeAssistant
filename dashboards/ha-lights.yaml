@@ -68,7 +68,8 @@
                   "entity_id": [
                     "light.living_room",
                     "light.porch",
-                    "light.tiffany_lamp_socket_1",
+                    "light.andrea_hq_tall_lamp",
+                    "switch.christmas_tree_lights_socket_1",
                     "switch.dresser_lamp_socket_1",
                     "switch.front_window_lights_socket",
                     "switch.basement_shelf_lamp_socket_1",
@@ -212,9 +213,15 @@
             },
             {
               "type": "tile",
-              "entity": "switch.basement_shelf_lamp_socket_1",
-              "name": "Shelf Lamp",
-              "icon": "mdi:lamp"
+              "entity": "light.andrea_hq_tall_lamp",
+              "name": "Andrea Tall Lamp",
+              "icon": "mdi:floor-lamp",
+              "features": [
+                {
+                  "type": "light-brightness"
+                }
+              ],
+              "features_position": "bottom"
             },
             {
               "type": "tile",
@@ -235,42 +242,19 @@
             },
             {
               "type": "tile",
-              "entity": "light.tiffany_lamp_socket_1",
-              "name": "Tiffany Lamp",
-              "icon": "mdi:lamp"
-            },
-            {
-              "type": "tile",
               "entity": "switch.dresser_lamp_socket_1",
               "name": "Dresser Lamp",
               "icon": "mdi:lamp"
             },
             {
               "type": "tile",
-              "entity": "switch.front_window_lights_socket",
-              "name": "Desk Lamp",
-              "icon": "mdi:desk-lamp"
+              "entity": "switch.christmas_tree_lights_socket_1",
+              "name": "Tiffany Lamp",
+              "icon": "mdi:lamp"
             },
             {
               "type": "tile",
               "entity": "binary_sensor.living_room_occupancy",
-              "name": "Occupancy",
-              "icon": "mdi:motion-sensor"
-            }
-          ]
-        },
-        {
-          "type": "grid",
-          "cards": [
-            {
-              "type": "heading",
-              "heading": "Andrea's Office",
-              "heading_style": "title",
-              "icon": "mdi:briefcase"
-            },
-            {
-              "type": "tile",
-              "entity": "binary_sensor.office_occupancy",
               "name": "Occupancy",
               "icon": "mdi:motion-sensor"
             }
