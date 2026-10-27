@@ -49,10 +49,6 @@
                 {
                   "entity": "light.porch_light",
                   "name": "Porch Light"
-                },
-                {
-                  "entity": "light.tiffany_lamp_socket_1",
-                  "name": "Tiffany Lamp"
                 }
               ]
             }

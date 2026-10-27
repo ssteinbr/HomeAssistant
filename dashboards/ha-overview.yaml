@@ -248,7 +248,7 @@
                   "entity_id": [
                     "light.living_room",
                     "light.porch",
-                    "light.tiffany_lamp_socket_1",
+                    "switch.christmas_tree_lights_socket_1",
                     "switch.dresser_lamp_socket_1",
                     "switch.front_window_lights_socket",
                     "switch.basement_shelf_lamp_socket_1",
@@ -306,7 +306,7 @@
             },
             {
               "type": "tile",
-              "entity": "light.tiffany_lamp_socket_1",
+              "entity": "switch.christmas_tree_lights_socket_1",
               "name": "Tiffany Lamp",
               "icon": "mdi:lamp"
             },
